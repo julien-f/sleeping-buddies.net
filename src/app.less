@@ -1,0 +1,72 @@
+// Imports Bootstrap.
+@import "bootstrap/less/bootstrap";
+
+// Imports Font Awesome.
+@import "fontawesome/less/font-awesome";
+@fa-font-path: "./assets/";
+
+// Work around Adblock which blocks some icons.
+.fa-facebook-adblock:before { content: @fa-var-facebook; }
+.fa-facebook-square-adblock:before { content: @fa-var-facebook-square; }
+.fa-google-plus-adblock:before { content: @fa-var-google-plus; }
+.fa-google-plus-square-adblock:before { content: @fa-var-google-plus-square; }
+.fa-instagram-adblock:before { content: @fa-var-instagram; }
+.fa-linkedin-adblock:before { content: @fa-var-linkedin; }
+.fa-linkedin-square-adblock:before { content: @fa-var-linkedin-square; }
+.fa-pinterest-adblock:before { content: @fa-var-pinterest; }
+.fa-share-square-o-adblock:before { content: @fa-var-share-square-o; }
+.fa-twitter-adblock:before { content: @fa-var-twitter; }
+.fa-twitter-square-adblock:before { content: @fa-var-twitter-square; }
+.fa-youtube-adblock:before { content: @fa-var-youtube; }
+.fa-youtube-square-adblock:before { content: @fa-var-youtube-square; }
+
+//====================================================================
+
+// .visible-js to display content only when JavaScript is ENABLED.
+// .visible-no-js to display content only when JavaScript is DISABLED.
+.no-js .visible-js, .js .visible-no-js {
+  display: none;
+}
+
+// When applied to a row all contained columns have the same height.
+.row-same-height {
+  display: flex;
+
+  & > .col {
+    &-xs, &-sm, &-md, &-lg {
+      &-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9, &-10, &-11, &-12 {
+        flex: 1;
+        margin: 0;
+      }
+    }
+  }
+}
+
+//====================================================================
+
+// All links should have a pointer cursor even if they do not have an
+// `href` attribute.
+a {
+  cursor: pointer;
+}
+
+//====================================================================
+// NavBar stuff
+
+// No fixed navbar for now.
+@navbar-height: 0;
+
+// Due to the fixed navbar, this trick is needed to make content
+// start at the correct position.
+body {
+  padding-top: @navbar-height;
+}
+
+// Due to the fixed navbar, this trick is needed to make anchors
+// scroll at the correct position.
+.anchor {
+  height: 0;
+  position: relative;
+  top: -@navbar-height;
+  visibility: hidden;
+}
