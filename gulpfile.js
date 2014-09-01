@@ -218,7 +218,7 @@ var dest = (function () {
 
 //====================================================================
 
-gulp.task('build-pages', function buildPages() {
+gulp.task('buildPages', function buildPages() {
   return src('index.jade')
     .pipe($.jade())
     .pipe(PRODUCTION ? noop() : $.embedlr({ port: LIVERELOAD_PORT }))
@@ -226,7 +226,9 @@ gulp.task('build-pages', function buildPages() {
   ;
 });
 
-gulp.task('build-scripts', ['install-bower-components'], function buildScripts() {
+gulp.task('buildScripts', [
+  'installBowerComponents',
+], function buildScripts() {
   return browserify(SRC_DIR +'/app', {
     // Extensions (other than “js” and “json”) to use.
     //extensions: [],
@@ -261,7 +263,9 @@ gulp.task('build-scripts', ['install-bower-components'], function buildScripts()
   ;
 });
 
-gulp.task('build-styles', ['install-bower-components'], function buildStyles() {
+gulp.task('buildStyles', [
+  'installBowerComponents',
+], function buildStyles() {
   return src('app.less')
     .pipe($.less({
       paths: [
@@ -277,13 +281,15 @@ gulp.task('build-styles', ['install-bower-components'], function buildStyles() {
   ;
 });
 
-gulp.task('copy-assets', ['install-bower-components'], function copyAssets() {
+gulp.task('copyAssets', [
+  'installBowerComponents',
+], function copyAssets() {
   return src('assets/**/*')
     .pipe(dest())
   ;
 });
 
-gulp.task('install-bower-components', function installBowerComponents(done) {
+gulp.task('installBowerComponents', function installBowerComponents(done) {
   require('bower').commands.install()
     .on('error', done)
     .on('end', function () {
@@ -295,13 +301,13 @@ gulp.task('install-bower-components', function installBowerComponents(done) {
 //--------------------------------------------------------------------
 
 gulp.task('build', [
-  'build-pages',
-  'build-scripts',
-  'build-styles',
-  'copy-assets',
+  'buildPages',
+  'buildScripts',
+  'buildStyles',
+  'copyAssets',
 ]);
 
-gulp.task('check-scripts', function checkScripts() {
+gulp.task('checkScripts', function checkScripts() {
   return gulp.src(SRC_DIR +'/**/*.js')
     .pipe($.jsvalidate())
     .pipe($.jshint())
