@@ -15,7 +15,7 @@ Campaign](https://en.wikipedia.org/wiki/Free_Hugs_Campaign)).
 
 ***sleeping-buddies.net* is not about sex!** You are of course free to
 engage in any activities you like with the people you met (as long
-as its consensual of course) but this is **not** the primary goal.
+as its consensual obviously) but this is **not** the primary goal.
 
 ### Values
 
