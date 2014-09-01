@@ -353,6 +353,6 @@ gulp.task('server', function server(done) {
   ;
 });
 
-//------------------------------------------------------------------------------
+//--------------------------------------------------------------------
 
-gulp.task('default', ['build', 'server']);
+gulp.task('default', PRODUCTION ? ['build'] : ['build', 'server']);
