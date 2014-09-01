@@ -252,10 +252,10 @@ gulp.task('build-scripts', ['install-bower-components'], function buildScripts()
     ],
   })
     // Annotate the code before minification (for Angular.js)
-    .pipe(PRODUCTION ? $.ngAnnotate({
-      add: true,
-      'single_quotes': true,
-    }) : noop())
+    //.pipe(PRODUCTION ? $.ngAnnotate({
+    //  add: true,
+    //  'single_quotes': true,
+    //}) : noop())
     .pipe(PRODUCTION ? $.uglify() : noop())
     .pipe(dest())
   ;
