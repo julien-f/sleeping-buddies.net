@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sleeping-buddies.net",
+  "name": "sleeping-buddies.net-client",
   "version": "0.0.0",
   "license": "AGPLv3",
   "devDependencies": {

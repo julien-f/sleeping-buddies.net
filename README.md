@@ -37,6 +37,7 @@ The following ideas are starting points and are open to debate.
     - All code must pass [JSHint](http://jshint.com/) with project configuration without warnings
     - Ideally, the code should be maintainable by only one person
     - Ideally, the code should be easily understandable by a new person
+    - Ideally, all code should be testable & tested
 - Clear separation of the client and the server
     - Any one of them should be interchangeable
     - Documented API

@@ -2,7 +2,6 @@
 
 //====================================================================
 
-/* global window: false, document: false */
 var $ = window.jQuery = require('jquery');
 require('bootstrap');
 

@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "sleeping-buddies.net-server",
+  "version": "0.0.0",
+  "license": "AGPLv3",
+  "bin": {
+    "sleeping-buddies-server": "index.js"
+  },
+  "scripts": {
+    "start": "node --harmony index.js"
+  },
+  "dependencies": {
+    "app-conf": "^0.2.0",
+    "bluebird": "^2.3.2",
+    "event-to-promise": "^0.3.1",
+    "exec-promise": "^0.4.0",
+    "express": "^4.8.7"
+  },
+  "engines": {
+    "node": ">= 0.11.9"
+  }
+}
